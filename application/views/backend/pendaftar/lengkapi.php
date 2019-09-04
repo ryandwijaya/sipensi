@@ -1,5 +1,7 @@
 <div class="card">
-    <div class="card-header"></div>
+    <div class="card-header">
+        <a href="<?= base_url() ?>pendaftar"><button class="btn btn-light text-black"><i class="fa fa-arrow-left"></i> Back</button></a>
+    </div>
     <div class="card-body">
         <h6 style="text-align: center">Persyaratan</h6>
         <hr>

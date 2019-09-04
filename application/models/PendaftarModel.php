@@ -17,6 +17,12 @@ class PendaftarModel extends GLOBAL_Model{
         $this->db->from('tb_pendaftar');
         return $this->db->get()->result_array();
     }
+    public function get_pendaftar_by_status($id)
+    {
+        $this->db->where('pendaftar_status',$id);
+        $this->db->from('tb_pendaftar');
+        return $this->db->get()->result_array();
+    }
     public function cek_pembayaran_user($id)
     {
         $this->db->where('pembayaran_pendaftaran',$id);

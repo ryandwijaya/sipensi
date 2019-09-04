@@ -13,13 +13,17 @@
 //			{
 //
 //			}
+            $this->load->model('PendaftarModel');
 		}
 		
 		public function index()
 		{
-			$data['title'] = 'Admin Index';
+			$data['title'] = 'Dashboard';
 			$data['page_title'] = '';
 			$data['menu'] = '';
+			$data['pendaftar'] = parent::model('PendaftarModel')->get_pendaftar();
+			$data['diterima'] = parent::model('PendaftarModel')->get_pendaftar_by_status('diterima');
+			$data['ditolak'] = parent::model('PendaftarModel')->get_pendaftar_by_status('ditolak');
 			$this->template('dashboard/index',$data);
 		}
 		

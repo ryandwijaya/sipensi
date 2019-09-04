@@ -14,20 +14,19 @@
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Lengkap</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="nama_lengkap" required placeholder="Nama Lengkap">
+                            <input type="text" class="form-control" value="<?= $pendaftar['pendaftar_nama'] ?>" name="nama_lengkap" readonly >
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Nama Panggilan</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control" name="nama_panggilan" required placeholder="Nama Panggilan">
+                            <input type="text" class="form-control" value="<?= $pendaftar['pendaftaran_nama_panggilan'] ?>" name="nama_panggilan" readonly placeholder="Nama Panggilan">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Jenis Kelamin</label>
                         <div class="col-sm-9">
-                            <input type="radio"  name="jk" value="pria" required> Pria
-                            <input type="radio" name="jk" class="ml-4" value="wanita" required> Wanita
+                            <input type="text" class="form-control" readonly value="<?= $pendaftar['pendaftar_jk'] ?>">
                         </div>
                     </div>
 
@@ -37,12 +36,12 @@
                             <div class="row">
                                 <div class="col-md-4">
 
-                                    <input type="text" class="form-control" required name="tempat_lahir" placeholder="Tempat Lahir">
+                                    <input type="text" class="form-control" readonly name="tempat_lahir" value="<?= $pendaftar['pendaftar_tempat_lahir'] ?>">
                                 </div>
                                 /
                                 <div class="col-md-6">
 
-                                    <input type="date" class="form-control" required name="tgl_lahir" placeholder="Tgl Lahir">
+                                    <input type="date" class="form-control" readonly name="tgl_lahir" value="<?= $pendaftar['pendaftar_tgl_lahir'] ?>">
                                 </div>
                             </div>
 
@@ -52,40 +51,34 @@
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Agama</label>
                         <div class="col-sm-9">
-                            <select name="agama" id="" class="form-control" required>
-                                <option value="islam">Islam</option>
-                                <option value="kristen">Kristen</option>
-                                <option value="hindu">Hindu</option>
-                                <option value="budha">Budha</option>
-                                <option value="khatolik">Khatolik</option>
-                            </select>
+                            <input type="text" class="form-control" readonly value="<?= $pendaftar['pendaftar_agama'] ?>">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Berat Badan</label>
                         <div class="col-sm-9">
-                            <input type="number" min="1" class="form-control"  name="berat_badan" placeholder="Berat Badan">
+                            <input type="number" min="1" class="form-control"  name="berat_badan" value="<?= $pendaftar['pendaftar_berat_badan'] ?>">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Tinggi Badan</label>
                         <div class="col-sm-9">
-                            <input type="number" min="1" class="form-control"  name="tinggi_badan" placeholder="Tinggi Badan">
+                            <input type="number" min="1" class="form-control"  name="tinggi_badan" value="<?= $pendaftar['pendaftar_tinggi_badan'] ?>">
                         </div>
                     </div>
 
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Golongan Darah</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control"  name="goldar" placeholder="Golongan Darah">
+                            <input type="text" class="form-control"  name="goldar" value="<?= $pendaftar['pendaftar_golongan_darah'] ?>">
                         </div>
                     </div>
                     <div class="form-group row">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Alamat</label>
                         <div class="col-sm-9">
-                            <textarea name="alamat" rows="3" class="form-control" required></textarea>
+                            <textarea name="alamat" rows="3" class="form-control" readonly><?= $pendaftar['pendaftar_alamat'] ?></textarea>
                         </div>
                     </div>
 
@@ -95,57 +88,71 @@
                     <div class="form-group row ml-3">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Ayah</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control"  name="nama_ayah" required placeholder="Nama Ayah">
+                            <input type="text" class="form-control"  name="nama_ayah" readonly placeholder="Nama Ayah" value="<?= $pendaftar['pendaftar_ayah'] ?>">
                         </div>
                     </div>
                     <div class="form-group row ml-3">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Ibu</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control"  name="nama_ibu" placeholder="Nama Ibu">
+                            <input type="text" class="form-control"  name="nama_ibu" readonly value="<?= $pendaftar['pendaftar_ibu'] ?>">
                         </div>
                     </div>
-<!--                    <h7><b>Pendidikan</b></h7>-->
-<!--                    <div class="form-group row ml-3">-->
-<!--                        <label for="inputEmail3" class="col-sm-3 col-form-label">Pendidikan Ayah</label>-->
-<!--                        <div class="col-sm-9">-->
-<!--                            <input type="text" class="form-control"  name="pendidikan_ayah" placeholder="Pendidikan Ayah">-->
-<!--                        </div>-->
-<!--                    </div>-->
-<!--                    <div class="form-group row ml-3">-->
-<!--                        <label for="inputEmail3" class="col-sm-3 col-form-label">Pendidikan Ibu</label>-->
-<!--                        <div class="col-sm-9">-->
-<!--                            <input type="text" class="form-control"  name="pendidikan_ibu" placeholder="Pendidikan Ibu">-->
-<!--                        </div>-->
-<!--                    </div>-->
+                    <!--                    <h7><b>Pendidikan</b></h7>-->
+                    <!--                    <div class="form-group row ml-3">-->
+                    <!--                        <label for="inputEmail3" class="col-sm-3 col-form-label">Pendidikan Ayah</label>-->
+                    <!--                        <div class="col-sm-9">-->
+                    <!--                            <input type="text" class="form-control"  name="pendidikan_ayah" placeholder="Pendidikan Ayah">-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
+                    <!--                    <div class="form-group row ml-3">-->
+                    <!--                        <label for="inputEmail3" class="col-sm-3 col-form-label">Pendidikan Ibu</label>-->
+                    <!--                        <div class="col-sm-9">-->
+                    <!--                            <input type="text" class="form-control"  name="pendidikan_ibu" placeholder="Pendidikan Ibu">-->
+                    <!--                        </div>-->
+                    <!--                    </div>-->
                     <h7><b>Pekerjaan</b></h7>
                     <div class="form-group row ml-3">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Pekerjaan Ayah</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control"  name="pekerjaan_ayah" placeholder="Pekerjaan Ayah">
+                            <input type="text" class="form-control"  name="pekerjaan_ayah" readonly value="<?= $pendaftar['pendaftar_p_ayah'] ?>">
                         </div>
                     </div>
                     <div class="form-group row ml-3">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Pekerjaan Ibu</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control"  name="pekerjaan_ibu" placeholder="Pekerjaan Ibu">
+                            <input type="text" class="form-control"  name="pekerjaan_ibu" readonly value="<?= $pendaftar['pendaftar_p_ibu'] ?>">
                         </div>
                     </div>
                     <br>
                     <div class="form-group row ml-3 mt-3">
                         <label for="inputEmail3" class="col-sm-3 col-form-label">Hubungan Terhadap Anak</label>
                         <div class="col-sm-9">
-                            <input type="text" class="form-control"  name="hubungan" placeholder="Kandung / Tiri / lainnya">
+                            <input type="text" class="form-control"  name="hubungan" value="<?= $pendaftar['pendaftar_hubungan'] ?>">
                         </div>
                     </div>
-                    <br><br>
 
+                    <br><br>
+                <div class="row mb-3">
+                    <div class="col-md-4 border">
+                        <label>KK :</label><br>
+                        <img src="<?= base_url() ?>assets/uploads/kk/<?= $pendaftar['pendaftar_kk'] ?>" alt="" width="260" height="260">
+                    </div>
+                    <div class="col-md- border">
+                        <label>KTP :</label><br>
+                        <img src="<?= base_url() ?>assets/uploads/ktp/<?= $pendaftar['pendaftar_ktp'] ?>" alt="" width="260" height="260">
+                    </div>
+                    <div class="col-md-4 border">
+                        <label>AKTA :</label><br>
+                        <img src="<?= base_url() ?>assets/uploads/akta/<?= $pendaftar['pendaftar_akta'] ?>" alt="" width="260" height="260">
+                    </div>
+                </div>
 
 
 
 
                     <div class="form-group row">
                         <div class="col-sm-12">
-                            <button type="submit" name="daftar" class="btn btn-primary float-right">Daftar</button>
+                            <a href="<?= base_url() ?>pendaftar" class="btn btn-warning float-right"><i class="fa fa-arrow-left"></i> Kembali</a>
                         </div>
                     </div>
                 </form>

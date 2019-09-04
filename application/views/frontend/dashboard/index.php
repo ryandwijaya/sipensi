@@ -43,7 +43,7 @@
             <a class="logo" href="#">Sipensi<span class="text-primary">.</span></a>
         </div>
         <div class="buy-button">
-            <a href="javascript:void(0)" class="btn btn-primary rounded">Login / Daftar</a>
+            <a href="<?= base_url() ?>login" class="btn btn-primary ">Login / Daftar</a>
         </div><!--end login button-->
         <!-- End Logo container-->
         <div class="menu-extras">
@@ -62,7 +62,11 @@
 
         <div id="navigation">
             <!-- Navigation Menu-->
-
+            <ul class="navigation-menu">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="index.html">Profile</a></li>
+                <li><a href="index.html">Visi dan Misi</a></li>
+            </ul>
         </div>
     </div>
 </header>
@@ -76,7 +80,7 @@
                 <div class="row align-items-center">
                     <div class="col-lg-7 col-md-7">
                         <div class="title-heading mt-4">
-                            <h1 class="heading mb-3">PIAUD <span class="text-primary">Ceria Anak Mandiri</span> </h1>
+                            <h1 class="heading mb-3">TK/KB <span class="text-primary">Ceria Anak Mandiri</span> </h1>
                             <p class="para-desc text-muted">Pendaftaran online siswa PIAUD Ceria Anak Mandiri.</p>
                             <div class="mt-4 pt-2">
                                 <a href="<?= base_url() ?>login" class="btn btn-primary-outline rounded mt-2 mr-2">Daftar Sekarang !</a>
@@ -159,7 +163,7 @@
                 <div class="section-title">
                     <h4 class="main-title mb-4">Punya Pertanyaan ?</h4>
                     <p class="text-muted para-desc mx-auto">Dapat menghubungi kami di <span class="text-primary font-weight-bold">ceriaMandiri@digtive.id</span> </p>
-                    
+
                 </div>
             </div><!--end col-->
         </div><!--end row-->

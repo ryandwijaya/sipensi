@@ -91,6 +91,7 @@
                             <i class="fa fa-address-card-o"></i><span>Pendaftar</span>
                         </a>
                     </li>
+                    <?php if ($this->session->userdata('sess_level')=='psb') {?>
                     <li
                         <?php if ($this->uri->segment(3) == 'users') {
                             echo 'class="active"';
@@ -100,6 +101,7 @@
                             <i class="fa fa-user-circle"></i><span>Users</span>
                         </a>
                     </li>
+                    <?php } ?>
 
 
                 </ul>
@@ -152,7 +154,7 @@
 
                                     <div class="dropdown-menu dropdown-menu-right" aria-labelledby="xp-userprofile">
                                         <a class="dropdown-item py-3 text-white text-center font-16" href="#">Welcome,
-                                            John Doe</a>
+                                            <?= $this->session->userdata('sess_nama') ?></a>
 
                                         <a class="dropdown-item" href="#"><i
                                                     class="icon-settings text-warning mr-2"></i> Setting</a>

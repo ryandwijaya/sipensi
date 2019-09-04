@@ -27,6 +27,14 @@ class PendaftarController extends GLOBAL_Controller
         parent::template('backend/pendaftar/index', $data);
     }
 
+    public function detail($id)
+    {
+        $data['title'] = 'Data Seluruh Pendaftar';
+        $data['pendaftar'] = parent::model('PendaftarModel')->get_single_pendaftar($id);
+
+        parent::template('backend/pendaftar/detail', $data);
+    }
+
     public function bayar($id)
     {
         if (isset($_POST['bayar'])){
@@ -65,6 +73,39 @@ class PendaftarController extends GLOBAL_Controller
             $data['title'] = 'Bukti Pembayaran Pendaftaran';
             $data['pendaftar'] = parent::model('PendaftarModel')->get_single_pendaftar($id);
             parent::template('backend/pendaftar/bayar', $data);
+        }
+
+    }
+
+    public function konfirmasi($id)
+    {
+        if (isset($_POST['terima'])) {
+            $data = array(
+                'pendaftar_status' => 'diterima'
+            );
+            $simpan = parent::model('PendaftarModel')->ubah_pendaftar($id,$data);
+            if ($simpan > 0) {
+                $this->session->set_flashdata('alert', 'success_edit');
+                redirect('pendaftar');
+            } else {
+                $this->session->set_flashdata('alert', 'fail_edit');
+                redirect('pendaftar');
+            }
+
+        }
+        else if (isset($_POST['tolak'])) {
+            $data = array(
+                'pendaftar_status' => 'ditolak'
+        );
+            $simpan = parent::model('PendaftarModel')->ubah_pendaftar($id,$data);
+            if ($simpan > 0) {
+                $this->session->set_flashdata('alert', 'success_edit');
+                redirect('pendaftar');
+            } else {
+                $this->session->set_flashdata('alert', 'fail_edit');
+                redirect('pendaftar');
+            }
+
         }
 
     }

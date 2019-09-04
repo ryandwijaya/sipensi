@@ -28,6 +28,9 @@
                         <?php
                         $no = 1;
                         foreach ($pendaftar as $res) { ?>
+                            <?php
+                            $cek_bayar = $this->PendaftarModel->cek_pembayaran_user($res['pendaftar_id']);
+                            ?>
                             <tr>
                                 <td><?= $no ?></td>
                                 <td><?= $res['pendaftar_nama'] ?></td>
@@ -36,7 +39,13 @@
                                 <td><?= $res['pendaftar_agama'] ?></td>
                                 <td class="text-center">
                                     <?php if ($res['pendaftar_kk'] != NULL && $res['pendaftar_ktp'] != NULL && $res['pendaftar_akta'] != NULL) { ?>
-                                        <span class="text-success">Lengkap</span>
+                                        <?php
+                                        if (count($cek_bayar) > 0) { ?>
+                                            <span class="text-success">Lengkap</span>
+
+                                        <?php } else { ?>
+                                            <span class="text-warning animated fadeIn infinite">Belum melakukan pembayaran</span>
+                                        <?php } ?>
                                     <?php } else { ?>
                                         <span class="text-danger animated fadeIn infinite">Belum Lengkap</span>
 
@@ -46,16 +55,14 @@
                                 <td class="text-center">
                                     <?php if ($this->session->userdata('sess_level') == 'ortu') { ?>
                                         <?php if ($res['pendaftar_kk'] != NULL && $res['pendaftar_ktp'] != NULL && $res['pendaftar_akta'] != NULL) { ?>
-                                            <a href="<?= base_url() ?>lihat/<?= $res['pendaftar_id'] ?>">
+                                            <a href="<?= base_url() ?>pendaftar/lihat/<?= $res['pendaftar_id'] ?>">
                                                 <button class="btn btn-info btn-sm btn-rounded" data-toggle="tooltip"
                                                         data-placement="right" title="Lihat Detail"><i
                                                             class="fa fa-eye"></i>
                                                 </button>
                                             </a>
                                             <?php
-                                            $cek_bayar = $this->PendaftarModel->cek_pembayaran_user($res['pendaftar_id']);
-                                            if ($cek_bayar > 0) {
-                                                ?>
+                                            if (count($cek_bayar) > 0) { ?>
 
                                             <?php } else { ?>
 
@@ -79,28 +86,34 @@
                                     <?php } ?>
                                     <?php if ($this->session->userdata('sess_level') == 'psb') { ?>
                                         <?php if ($res['pendaftar_kk'] != NULL && $res['pendaftar_ktp'] != NULL && $res['pendaftar_akta'] != NULL) { ?>
-                                            <a href="<?= base_url() ?>lihat/<?= $res['pendaftar_id'] ?>"
+                                            <a href="<?= base_url() ?>pendaftar/lihat/<?= $res['pendaftar_id'] ?>"
                                                data-toggle="tooltip" data-placement="right" title="Lihat Detail">
                                                 <button class="btn btn-info btn-sm btn-rounded"><i
                                                             class="fa fa-eye"></i>
                                                 </button>
                                             </a>
-                                            <form action="<?= base_url() ?>konfirmasi/<?= $res['pendaftar_id'] ?>"
-                                                  method="POST">
-                                                <button class="btn btn-success btn-sm btn-rounded" type="submit"
-                                                        name="terima" data-toggle="tooltip" data-placement="right"
-                                                        title="Terima"><i class="fa fa-check"></i>
-                                                </button>
+                                            <?php if ($res['pendaftar_status'] == 'waiting') { ?>
+                                                <form action="<?= base_url() ?>pendaftar/konfirmasi/<?= $res['pendaftar_id'] ?>"
+                                                      method="POST">
+                                                    <button class="btn btn-success btn-sm btn-rounded" type="submit"
+                                                            name="terima" data-toggle="tooltip" data-placement="right"
+                                                            title="Terima"
+                                                            onclick="return confirm('Yakin ingin menerima ?')"><i
+                                                                class="fa fa-check"></i>
+                                                    </button>
 
 
-                                                <button class="btn btn-danger btn-sm btn-rounded" type="submit"
-                                                        name="tolak" data-toggle="tooltip" data-placement="right"
-                                                        title="Tolak"><i class="fa fa-close"></i>
-                                                </button>
-                                            </form>
+                                                    <button class="btn btn-danger btn-sm btn-rounded" type="submit"
+                                                            name="tolak" data-toggle="tooltip" data-placement="right"
+                                                            title="Tolak"
+                                                            onclick="return confirm('Yakin ingin menolak ?')"><i
+                                                                class="fa fa-close"></i>
+                                                    </button>
+                                                </form>
+                                            <?php } ?>
 
                                         <?php } else { ?>
-                                            <a href="<?= base_url() ?>lihat/<?= $res['pendaftar_id'] ?>"
+                                            <a href="<?= base_url() ?>pendaftar/lihat/<?= $res['pendaftar_id'] ?>"
                                                data-toggle="tooltip" data-placement="right" title="Lihat Detail">
                                                 <button class="btn btn-info btn-rounded btn-sm"><i
                                                             class="fa fa-eye"></i>

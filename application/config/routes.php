@@ -8,6 +8,8 @@ $route['users/tambah'] = 'UserController/tambah';
 
 $route['pendaftar'] = 'PendaftarController';
 $route['pendaftar/tambah'] = 'PendaftarController/tambah';
+$route['pendaftar/lihat/(:any)'] = 'PendaftarController/detail/$1';
+$route['pendaftar/konfirmasi/(:any)'] = 'PendaftarController/konfirmasi/$1';
 $route['daftar'] = 'PendaftarController/daftar';
 $route['lengkapi/(:any)'] = 'PendaftarController/lengkapi/$1';
 $route['bayar/(:any)'] = 'PendaftarController/bayar/$1';
