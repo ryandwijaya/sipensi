@@ -21,7 +21,7 @@ $route['frontend'] = 'Welcome/frontend';
 $route['logout'] = 'AuthController/logout';
 $route['login'] = 'AuthController/login';
 
-$route['default_controller'] = 'UserController/index';
+$route['default_controller'] = 'Welcome/frontend';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
 
