@@ -47,8 +47,8 @@
                             <div class="p-3">
                                 <form action="<?= base_url() ?>register" method="POST">
                                     <div class="text-center mb-3">
-                                        <h4 class="text-black">Sign Up !</h4>
-                                        <p class="text-muted">Have account ? <a href="<?= base_url() ?>login">Sign In</a> Here</p>
+                                        <h4 class="text-black">Daftar !</h4>
+                                        <p class="text-muted">Sudah Punya Akun ? <a href="<?= base_url() ?>login">Masuk</a> Disini</p>
                                     </div>
 
                                     <div class="form-group">
@@ -72,7 +72,7 @@
 
                                         </div>
                                     </div>
-                                    <button type="submit" name="register" class="btn btn-primary btn-rounded btn-lg btn-block">Sign Up</button>
+                                    <button type="submit" name="register" class="btn btn-primary btn-rounded btn-lg btn-block">Daftar</button>
                                 </form>
                             </div>
                         </div>

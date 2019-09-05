@@ -18,6 +18,8 @@ $route['bayar/(:any)'] = 'PendaftarController/bayar/$1';
 // administrator
 $route['dashboard'] = 'AdminController';
 $route['frontend'] = 'Welcome/frontend';
+$route['visimisi'] = 'Welcome/visimisi';
+$route['profile'] = 'Welcome/profile';
 
 // authentication
 $route['logout'] = 'AuthController/logout';

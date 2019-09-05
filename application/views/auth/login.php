@@ -77,8 +77,8 @@
                             <div class="p-3">
                                 <form action="<?= base_url() ?>login" method="POST">
                                     <div class="text-center mb-3">
-                                        <h4 class="text-black">Sign In !</h4>
-                                        <p class="text-muted">New to account ? <a href="<?= base_url() ?>register">Sign Up</a> Here</p>
+                                        <h4 class="text-black">Silahkan Masuk !</h4>
+                                        <p class="text-muted">Belum punya akun ? <a href="<?= base_url() ?>register">Daftar </a> Disini</p>
                                     </div>
 
 
@@ -94,11 +94,11 @@
                                         </div>
                                         <div class="form-group col-6 text-right">
                                             <label class="forgot-psw">
-                                                <a id="forgot-psw" href="page-forgotpsw.html">Forgot Password?</a>
+
                                             </label>
                                         </div>
                                     </div>
-                                    <button type="submit" name="login" class="btn btn-primary btn-rounded btn-lg btn-block">Sign In</button>
+                                    <button type="submit" name="login" class="btn btn-primary btn-rounded btn-lg btn-block">Masuk</button>
                                 </form>
                             </div>
                         </div>
