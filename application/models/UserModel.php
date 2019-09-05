@@ -28,7 +28,7 @@
 		public function ubah_user($iduser,$datauser)
 		{
 			
-			return parent::update_table_with_status('user','user_id',$iduser,$datauser);
+			return parent::update_table_with_status('tb_user','user_id',$iduser,$datauser);
 		}
 		
 		public function delete_user($id)
@@ -36,7 +36,7 @@
 			$user = array(
 				'user_id' => $id
 			);
-			return parent::delete_row_with_status('user',$user);
+			return parent::delete_row_with_status('tb_user',$user);
 		}
 		
 		public function insert_detail_user($data)

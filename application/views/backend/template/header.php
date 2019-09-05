@@ -91,6 +91,7 @@
                             <i class="fa fa-address-card-o"></i><span>Pendaftar</span>
                         </a>
                     </li>
+
                     <?php if ($this->session->userdata('sess_level')=='psb') {?>
                     <li
                         <?php if ($this->uri->segment(3) == 'users') {
@@ -102,6 +103,17 @@
                         </a>
                     </li>
                     <?php } ?>
+
+                    <li
+                        <?php if ($this->uri->segment(3) == 'laporan') {
+                            echo 'class="active"';
+                        } ?>
+                    >
+                        <a href="<?= base_url() ?>laporan">
+                            <i class="typcn typcn-clipboard"></i><span>Laporan</span>
+                        </a>
+                    </li>
+
 
 
                 </ul>

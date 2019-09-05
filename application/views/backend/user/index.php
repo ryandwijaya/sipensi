@@ -26,7 +26,9 @@
                                 <td><?= $no ?></td>
                                 <td><?= $val['user_nama'] ?></td>
                                 <td><?= $val['user_username'] ?></td>
-                                <td class="text-center">  <button class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></button> | <button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button> </td>
+                                <td class="text-center"><a href="<?= base_url() ?>user/edit/<?= $val['user_id'] ?>"><button class="btn btn-warning btn-sm"><i class="fa fa-edit"></i></button></a> |
+                                    <a href="<?= base_url() ?>user/delete/<?= $val['user_id'] ?>" onclick="return confirm('Yakin ingin mengapus?')"><button class="btn btn-danger btn-sm"><i class="fa fa-trash-o"></i></button></a>
+                                </td>
                             </tr>
                         <?php
                         $no++;
@@ -51,7 +53,7 @@
                     </button>
                 </div>
                 <div class="modal-body">
-                    <form action="" class="p-2">
+                    <form action="<?= base_url() ?>user/tambah" class="p-2" method="post">
                         <div class="from-group">
                             <label>Nama</label>
                             <input type="text" class="form-control" name="nama">
@@ -62,7 +64,11 @@
                         </div>
                         <div class="from-group">
                             <label>Password</label>
-                            <input type="text" class="form-control" name="password">
+                            <input type="password" class="form-control" name="password">
+                        </div>
+                        <div class="from-group">
+                            <label>Nomor HP</label>
+                            <input type="text" class="form-control" name="nope">
                         </div>
                         <div class="from-group">
                             <label>Level</label>
@@ -72,12 +78,13 @@
                                 <option value="ortu">Orang Tua</option>
                             </select>
                         </div>
-                    </form>
+
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                    <button type="button" class="btn btn-primary">Save changes</button>
+                    <button type="submit" name="tambah" class="btn btn-primary">Save changes</button>
                 </div>
+                </form>
             </div>
         </div>
     </div>
